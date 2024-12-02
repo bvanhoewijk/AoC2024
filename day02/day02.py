@@ -1,31 +1,28 @@
 def part1(data):
     safe = 0
     for item in data:
-        increasing = all((i < j and abs(j - i) < 4) for i, j in zip(item, item[1:]))
-        decreasing = all((i > j and abs(j - i) < 4) for i, j in zip(item, item[1:]))
-        safe += increasing or decreasing
+        safe += check_increasing_decreasing(item)
     print("Part1", safe)
 
+def check_increasing_decreasing(the_list):
+    increasing = all((i < j and abs(j - i) < 4) for i, j in zip(the_list, the_list[1:]))
+    decreasing = all((i > j and abs(j - i) < 4) for i, j in zip(the_list, the_list[1:]))
+    
+    return increasing or decreasing
 
 def part2(data):
     all_safe = 0
     for item in data:
-        increasing = all((i < j and abs(j - i) < 4) for i, j in zip(item, item[1:]))
-        decreasing = all((i > j and abs(j - i) < 4) for i, j in zip(item, item[1:]))
-
         safe = False
-        if not (increasing or decreasing):
+        check = check_increasing_decreasing(item)
+        if not check:
             for i in range(len(item)):
                 item2 = item.copy()
                 del item2[i]
-                increasing = all(
-                    (i < j and abs(j - i) < 4) for i, j in zip(item2, item2[1:])
-                )
-                decreasing = all(
-                    (i > j and abs(j - i) < 4) for i, j in zip(item2, item2[1:])
-                )
-                if increasing or decreasing:
+                check = check_increasing_decreasing(item2)
+                if check:
                     safe = True
+                    break
         else:
             safe = True
 
