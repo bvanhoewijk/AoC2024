@@ -16,9 +16,8 @@ def part2(data):
             do = False
         elif x.group(0) == "do()":
             do = True
-        else:
-            if do:
-                res += int(x.groups()[2]) * int(x.groups()[3])
+        elif do:
+            res += int(x.groups()[2]) * int(x.groups()[3])
     return res
 
 
