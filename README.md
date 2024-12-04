@@ -11,3 +11,18 @@
 ## Day 03:
 - Part 1: Regex find and do `mul(x, y)` 
 - Part 2: Same but with added `do()` and `don't()` to do an instruction.
+
+## Day 04:
+- Part 1: Find "XMAS" string in matrix
+```text
+..X..
+.XMAS
+..XSX
+```
+- Part 2: Find a 'cross':
+
+```text
+M.S
+.A.
+M.S
+```
