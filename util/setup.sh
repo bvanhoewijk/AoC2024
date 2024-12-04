@@ -6,3 +6,5 @@ mkdir -p ${day}
 touch ${day}/small.txt
 touch ${day}/big.txt
 touch ${day}/${day}.py
+
+cd ${day}
