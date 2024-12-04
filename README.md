@@ -1,5 +1,7 @@
 # AoC2024
 
+https://adventofcode.com/
+
 ## Day 01
 - Part 1: Sorting and comparing numbers
 - Part 2: Finding occurences and multiply
