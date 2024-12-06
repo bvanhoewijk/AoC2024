@@ -28,3 +28,10 @@ M.S
 .A.
 M.S
 ```
+
+## Day 05
+
+## Day 06
+- Maze
+## Day 07
+- Operators
