@@ -1,5 +1,5 @@
-from pprint import pprint
 import sys
+from pprint import pprint
 
 
 def in_bounds(next_node, dataset_size):

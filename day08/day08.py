@@ -1,6 +1,6 @@
-from pprint import pprint
 import itertools
 import math
+from pprint import pprint
 
 
 def part1(dataset):
