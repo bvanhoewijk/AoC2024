@@ -1,5 +1,6 @@
 import re
 from itertools import product
+
 from tqdm import tqdm
 
 
