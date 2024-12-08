@@ -30,8 +30,17 @@ M.S
 ```
 
 ## Day 05
+- Part 1: Check if sorted
+- Part 2: Sort according to rules
 
 ## Day 06
-- Maze
+- Part 1: Traverse grid and count steps of guard.
+- Part 2: Introduce loops the security guard will take
+
 ## Day 07
-- Operators
+- Part 1: Find the correct operators: "*" and "+" to get to a solution.
+- Part 2: Find the correct operators: "*", "+" and "||". This solution is very slow, but it works. (takes about 3')
+
+## Day 08
+- Part 1: Tower locations along an axis in a grid.
+- Part 2: Same, but slightly more complicated.
