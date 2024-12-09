@@ -27,10 +27,6 @@ def find_start(dataset):
 
 def part1(dataset, r, c):
     dataset_size = (len(dataset), len(dataset[0]))
-
-    turn = 0
-    dataset_size = (len(dataset), len(dataset[0]))
-
     seen = set()
     turn = 0
     while True:
@@ -41,8 +37,7 @@ def part1(dataset, r, c):
             return seen
         if dataset[next_r][next_c] == "#":
             turn += 1
-            if turn == 4:
-                turn = 0
+            if turn == 4: turn = 0
         else:
             r = next_r
             c = next_c
@@ -61,8 +56,7 @@ def do_loop(dataset, r, c):
             return False
         if dataset[next_r][next_c] == "#":
             turn += 1
-            if turn == 4:
-                turn = 0
+            if turn == 4: turn = 0
         else:
             r = next_r
             c = next_c
