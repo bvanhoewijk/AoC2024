@@ -2,6 +2,14 @@
 
 https://adventofcode.com/
 
+## Day 10: 
+- Part1: Find number of trails from a starting point: shortest path.
+- Part2: Find number of trails from a starting point: all paths that go from 0 - 9 in a trail. Difference between part1 and part2 is essentially a `set()` replaced with a `list()`
+
+## Day 09:
+- Part1: Disk defragmenting single digits
+- Part2: Disk defragmenting complete files. This one took me quite some time to get the pointers correct.
+
 ## Day 08
 - Part 1: Tower locations along an axis in a grid.
 - Part 2: Same, but slightly more complicated.
