@@ -12,7 +12,8 @@ https://adventofcode.com/
 
 ## Day 09:
 - Part1: Disk defragmenting single digits
-- Part2: Disk defragmenting complete files. This one took me quite some time to get the pointers correct.
+- Part2: Disk defragmenting complete files. This one took me quite some time to get the pointers correct. 
+- [ ] I borked the commits of day09 part2. Fix later.
 
 ## Day 08
 - Part 1: Tower locations along an axis in a grid.
