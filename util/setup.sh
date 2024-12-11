@@ -5,6 +5,6 @@ echo ${day}
 mkdir -p ${day}
 touch ${day}/small.txt
 touch ${day}/big.txt
-touch ${day}/${day}.py
 
+cp ./util/init.py ${day}/${day}.py
 cd ${day}
