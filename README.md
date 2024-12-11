@@ -2,6 +2,10 @@
 
 https://adventofcode.com/
 
+## Day 11: 
+- Part1: Count numbers that have a certain criteria. The list becomes very big very quick.
+- Part2: Much longer list. Python's `Counter` makes short work of this.
+
 ## Day 10: 
 - Part1: Find number of trails from a starting point: shortest path.
 - Part2: Find number of trails from a starting point: all paths that go from 0 - 9 in a trail. Difference between part1 and part2 is essentially a `set()` replaced with a `list()`
