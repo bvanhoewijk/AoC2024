@@ -26,7 +26,6 @@ def part2(dataset):
     pass
 
 if __name__ == "__main__":
-    # dataset = "510613 358 84 40702 4373582 2 0 1584".split(" ")
     dataset = [int(item) for item in open("big.txt", "r").readlines()[0].split(" ")]
     print("Part1", blink(dataset, 25).total())
     print("Part2", blink(dataset, 75).total())
