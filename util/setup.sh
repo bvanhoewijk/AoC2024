@@ -8,3 +8,4 @@ touch ${day}/big.txt
 
 cp ./util/init.py ${day}/${day}.py
 cd ${day}
+$SHELL

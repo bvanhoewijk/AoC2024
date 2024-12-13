@@ -2,6 +2,10 @@
 
 https://adventofcode.com/
 
+## Day13
+- Part1: Systems of equations. Solved with sympy library.
+- Part2: Same, but with bigger numbers.
+
 ## Day12
 - Part1: Find area and perimeter of fences. (BFS)
 - Part2: Find length of sides of perimeter (got stuck with this one)
