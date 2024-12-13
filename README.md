@@ -2,6 +2,10 @@
 
 https://adventofcode.com/
 
+## Day12
+- Part1: Find area and perimeter of fences. (BFS)
+- Part2: Find length of sides of perimeter (got stuck with this one)
+
 ## Day 11: 
 - Part1: Count numbers that have a certain criteria. The list becomes very big very quick.
 - Part2: Much longer list. Python's `Counter` makes short work of this.
