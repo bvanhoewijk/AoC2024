@@ -2,6 +2,11 @@
 
 https://adventofcode.com/
 
+## Day14
+- Part 1: Position of robots at time step 100
+- Part 2: Which time shows a christmas tree?
+  - I went for reddit for this one. Approach was to find the second where the safety factor is smallest.
+
 ## Day13
 - Part1: Systems of equations. Solved with sympy library.
 - Part2: Same, but with bigger numbers.
