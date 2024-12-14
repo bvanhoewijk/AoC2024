@@ -34,7 +34,7 @@ https://adventofcode.com/
 
 ## Day 07
 - [x] Part 1: Find the correct operators: "*" and "+" to get to a solution.
-- Part 2: Find the correct operators: "*", "+" and "||". This solution is very slow, but it works. (takes about 3')
+- [x] Part 2: Find the correct operators: "*", "+" and "||". This solution is very slow, but it works. (takes about 3')
 
 ## Day 06
 - [x] Part 1: Traverse grid and count steps of guard.
