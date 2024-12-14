@@ -2,16 +2,16 @@
 
 https://adventofcode.com/
 
-## Day14
+## Day 14
 - [x] Part 1: Position of robots at time step 100
 - [x] Part 2: Which time shows a christmas tree?
   - I went for reddit for this one. Approach was to find the second where the safety factor is smallest.
 
-## Day13
+## Day 13
 - [x] Part1: Systems of equations. Solved with sympy library.
 - [x] Part2: Same, but with bigger numbers.
 
-## Day12
+## Day 12
 - [x] Part1: Find area and perimeter of fences. (BFS)
 - [ ] Part2: Find length of sides of perimeter (still stuck with this one)
 
@@ -26,7 +26,7 @@ https://adventofcode.com/
 ## Day 09:
 - [x] Part1: Disk defragmenting single digits
 - [x] Part2: Disk defragmenting complete files. This one took me quite some time to get the pointers correct. 
-    - [ ] I borked the commits of day09 part2. Fix later.
+    - [ ] I borked the commits of Part2. Fix later.
 
 ## Day 08
 - [x] Part 1: Tower locations along an axis in a grid.
