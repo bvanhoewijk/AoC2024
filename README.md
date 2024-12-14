@@ -3,55 +3,55 @@
 https://adventofcode.com/
 
 ## Day14
-- Part 1: Position of robots at time step 100
-- Part 2: Which time shows a christmas tree?
+- [x] Part 1: Position of robots at time step 100
+- [x] Part 2: Which time shows a christmas tree?
   - I went for reddit for this one. Approach was to find the second where the safety factor is smallest.
 
 ## Day13
-- Part1: Systems of equations. Solved with sympy library.
-- Part2: Same, but with bigger numbers.
+- [x] Part1: Systems of equations. Solved with sympy library.
+- [x] Part2: Same, but with bigger numbers.
 
 ## Day12
-- Part1: Find area and perimeter of fences. (BFS)
-- Part2: Find length of sides of perimeter (got stuck with this one)
+- [x] Part1: Find area and perimeter of fences. (BFS)
+- [ ] Part2: Find length of sides of perimeter (still stuck with this one)
 
 ## Day 11: 
-- Part1: Count numbers that have a certain criteria. The list becomes very big very quick.
-- Part2: Much longer list. Python's `Counter` makes short work of this.
+- [x] Part1: Count numbers that have a certain criteria. The list becomes very big very quick.
+- [x] Part2: Much longer list. Python's `Counter` makes short work of this.
 
 ## Day 10: 
-- Part1: Find number of trails from a starting point: shortest path.
-- Part2: Find number of trails from a starting point: all paths that go from 0 - 9 in a trail. Difference between part1 and part2 is essentially a `set()` replaced with a `list()`
+- [x] Part1: Find number of trails from a starting point: shortest path.
+- [x] Part2: Find number of trails from a starting point: all paths that go from 0 - 9 in a trail. Difference between part1 and part2 is essentially a `set()` replaced with a `list()`
 
 ## Day 09:
-- Part1: Disk defragmenting single digits
-- Part2: Disk defragmenting complete files. This one took me quite some time to get the pointers correct. 
-- [ ] I borked the commits of day09 part2. Fix later.
+- [x] Part1: Disk defragmenting single digits
+- [x] Part2: Disk defragmenting complete files. This one took me quite some time to get the pointers correct. 
+    - [ ] I borked the commits of day09 part2. Fix later.
 
 ## Day 08
-- Part 1: Tower locations along an axis in a grid.
-- Part 2: Same, but slightly more complicated.
+- [x] Part 1: Tower locations along an axis in a grid.
+- [x] Part 2: Same, but slightly more complicated.
 
 ## Day 07
-- Part 1: Find the correct operators: "*" and "+" to get to a solution.
+- [x] Part 1: Find the correct operators: "*" and "+" to get to a solution.
 - Part 2: Find the correct operators: "*", "+" and "||". This solution is very slow, but it works. (takes about 3')
 
 ## Day 06
-- Part 1: Traverse grid and count steps of guard.
-- Part 2: Introduce loops the security guard will take
+- [x] Part 1: Traverse grid and count steps of guard.
+- [x] Part 2: Introduce loops the security guard will take
 
 ## Day 05
-- Part 1: Check if sorted
-- Part 2: Sort according to rules
+- [x] Part 1: Check if sorted
+- [x] Part 2: Sort according to rules
 
 ## Day 04:
-- Part 1: Find "XMAS" string in matrix
+- [x] Part 1: Find "XMAS" string in matrix
 ```text
 ..X..
 .XMAS
 ..XSX
 ```
-- Part 2: Find a 'cross':
+- [x] Part 2: Find a 'cross':
 
 ```text
 M.S
@@ -60,13 +60,13 @@ M.S
 ```
 
 ## Day 03:
-- Part 1: Regex find and do `mul(x, y)` 
-- Part 2: Same but with added `do()` and `don't()` to do an instruction.
+- [x] Part 1: Regex find and do `mul(x, y)` 
+- [x] Part 2: Same but with added `do()` and `don't()` to do an instruction.
 
 ## Day 02
-- Part 1: Comparing increasing/decreasing lists
-- Part 2: Same, but up to one item removed.
+- [x] Part 1: Comparing increasing/decreasing lists
+- [x] Part 2: Same, but up to one item removed.
 
 ## Day 01
-- Part 1: Sorting and comparing numbers
-- Part 2: Finding occurences and multiply
+- [x] Part 1: Sorting and comparing numbers
+- [x] Part 2: Finding occurences and multiply
