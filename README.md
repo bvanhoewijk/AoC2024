@@ -1,5 +1,9 @@
 # AoC2024
 
+## Day 15: ⭐
+- [x] Part 1: Move robots that move boxes
+- [ ] Part 2: Boxes have size 2. Stuck with this one.
+
 ## Day 14: ⭐⭐ 
 - [x] Part 1: Position of robots at time step 100
 - [x] Part 2: Which time shows a christmas tree?
