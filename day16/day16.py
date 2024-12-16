@@ -1,5 +1,14 @@
-def part1(dataset):
-    pass
+import sys
+from pprint import pprint
+def part1(file):
+    path, _, start, end, grid = load_data(file)
+    final_path, cost = dijkstra(start, end, path)
+    
+    for p, s in final_path[:-1]:
+        grid[p[0]][p[1]] = s
+    for row in grid:
+        print("".join(row))
+    print(f"Part1:\nsteps {len(final_path)-1}, cost: {cost}")
 
 
 def part2(dataset):
@@ -28,7 +37,7 @@ def load_data(file):
     return path, wall, start, end, dataset
 
 
-def bfs(start, end, pathblocks):
+def dijkstra(start, end, pathblocks):
     dirs = [
         (-1, 0),  # Forward ^
         (1, 0),  # Down    v
@@ -38,33 +47,35 @@ def bfs(start, end, pathblocks):
 
     dirs_dict = dict(zip(dirs, list("^v><")))
     visited = set(start)
-    queue = [((start[0], start[1]), []) ]
+    path = []
+    queue = []
 
+
+    cost = 0
+    queue.append((start, path + [(start, ">")], 0))
+
+    i = 0
     while queue:
-        current, path = queue.pop()
-        
+        queue = sorted(queue, key=lambda x: x[2], reverse=True)
+        current, path, cost = queue.pop()
         r, c = current
         visited.add(current)
         for dir in dirs:
             next_dir = (r + dir[0], c + dir[1])
             symbol = dirs_dict[(dir[0], dir[1])]
             if (next_dir) == end:
-                return path + [next_dir]
+                return path + [next_dir], cost+1
             if next_dir in pathblocks and next_dir not in visited:
-                queue.append((next_dir, path + [(next_dir, symbol)]))
-
+                i += 1
+                new_cost = cost + 1
+                if path[-1][1] != symbol:
+                    new_cost += 1000
+                new_path = path + [(next_dir, symbol)]
+                queue.append((next_dir, new_path, new_cost))
 
 def main():
-    path, _, start, end, grid = load_data("small.txt")
-    final_path = bfs(start, end, path)
-    # print(len(final_path))
-    # print(len(final_path))
-    # # print(final_path)
-    # print(final_path)
-    for p, s in final_path[:-1]:
-        grid[p[0]][p[1]] = s
-    for row in grid:
-        print("".join(row))
+    part1("big.txt")
+
 
 
 if __name__ == "__main__":

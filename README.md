@@ -1,5 +1,9 @@
 # AoC2024
 
+## Day 16: ⭐
+- [x] Part 1: Shortest path via Dijkstra's algorithm: BFS + sorted queue with cost
+- [ ] Part 2: 
+
 ## Day 15: ⭐
 - [x] Part 1: Move robots that move boxes
 - [ ] Part 2: Boxes have size 2. Stuck with this one.
@@ -15,7 +19,7 @@
 
 ## Day 12: ⭐
 - [x] Part 1: Find area and perimeter of fences. (BFS)
-- [ ] Part 2: Find length of sides of perimeter (still stuck with this one)
+- [ ] Part 2: Find length of sides of perimeter. Still stuck with this one.
 
 ## Day 11: ⭐⭐
 - [x] Part 1: Count numbers that have a certain criteria. The list becomes very big very quick.
