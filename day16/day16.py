@@ -1,0 +1,71 @@
+def part1(dataset):
+    pass
+
+
+def part2(dataset):
+    pass
+
+
+def load_data(file):
+    dataset = [list(item.strip()) for item in open(file, "r").readlines()]
+    path = set()
+    wall = set()
+    start = ()
+    end = ()
+    for r in range(len(dataset[0])):
+        for c in range(len(dataset)):
+            if dataset[r][c] == ".":
+                path.add((r, c))
+            if dataset[r][c] == "#":
+                wall.add((r, c))
+            if dataset[r][c] == "S":
+                path.add((r, c))
+                start = (r, c)
+            if dataset[r][c] == "E":
+                path.add((r, c))
+                end = (r, c)
+
+    return path, wall, start, end, dataset
+
+
+def bfs(start, end, pathblocks):
+    dirs = [
+        (-1, 0),  # Forward ^
+        (1, 0),  # Down    v
+        (0, 1),  # Right   >
+        (0, -1),  # Left    <
+    ]
+
+    dirs_dict = dict(zip(dirs, list("^v><")))
+    visited = set(start)
+    queue = [((start[0], start[1]), []) ]
+
+    while queue:
+        current, path = queue.pop()
+        
+        r, c = current
+        visited.add(current)
+        for dir in dirs:
+            next_dir = (r + dir[0], c + dir[1])
+            symbol = dirs_dict[(dir[0], dir[1])]
+            if (next_dir) == end:
+                return path + [next_dir]
+            if next_dir in pathblocks and next_dir not in visited:
+                queue.append((next_dir, path + [(next_dir, symbol)]))
+
+
+def main():
+    path, _, start, end, grid = load_data("small.txt")
+    final_path = bfs(start, end, path)
+    # print(len(final_path))
+    # print(len(final_path))
+    # # print(final_path)
+    # print(final_path)
+    for p, s in final_path[:-1]:
+        grid[p[0]][p[1]] = s
+    for row in grid:
+        print("".join(row))
+
+
+if __name__ == "__main__":
+    main()
