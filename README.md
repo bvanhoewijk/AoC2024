@@ -1,5 +1,9 @@
 # AoC2024
 
+## Day 17: ⭐⭐
+- [x] Part 1: implement op codes
+- [x] Part 2: find some input. Reverse engineered the program into it's components. Did this with help from [HyperNeutrino](https://www.youtube.com/watch?v=y-UPxMAh2N8).
+
 ## Day 16: ⭐
 - [x] Part 1: Shortest path via Dijkstra's algorithm: BFS + sorted queue with cost
 - [ ] Part 2: Find all possible shortest paths. I don't know how to do tackle this one.
