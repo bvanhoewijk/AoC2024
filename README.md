@@ -1,5 +1,14 @@
 # AoC2024
 
+Repository for storing the code for [Advent of Code 2023](https://adventofcode.com/2024). 
+
+Rules I impose on myself:
+1. Code must not be generated via A.I.
+2. When I get stuck for a prolonged amount of time, I can go to reddit for help for hints. But I am not allowed to copy-paste code.
+3. Same goes for YouTube. 
+
+Goal is to solve fun programming exercises to improve my coding skills.
+
 ## Day 17: ⭐⭐
 - [x] Part 1: implement op codes
 - [x] Part 2: find some input. Reverse engineered the program into it's components. Did this with help from [HyperNeutrino](https://www.youtube.com/watch?v=y-UPxMAh2N8).
