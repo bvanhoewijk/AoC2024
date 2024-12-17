@@ -1,6 +1,6 @@
 # AoC2024
 
-Repository for storing the code for [Advent of Code 2023](https://adventofcode.com/2024). 
+Repository for storing the code for [Advent of Code 2024](https://adventofcode.com/2024). 
 
 Rules I impose on myself:
 1. Code must not be generated via A.I.
