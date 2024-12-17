@@ -2,7 +2,7 @@
 
 ## Day 16: ⭐
 - [x] Part 1: Shortest path via Dijkstra's algorithm: BFS + sorted queue with cost
-- [ ] Part 2: 
+- [ ] Part 2: Find all possible shortest paths. I don't know how to do tackle this one.
 
 ## Day 15: ⭐
 - [x] Part 1: Move robots that move boxes
