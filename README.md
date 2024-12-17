@@ -11,7 +11,7 @@ Goal is to solve fun programming exercises to improve my coding skills.
 
 ## Day 18: ⭐⭐
 - [x] Part 1: Maze traversal (BFS).
-- [x] Part 2: Maze traversal with blockades. I solved it via bruteforce (~5 minutes). I could think about it a bit more clever, but this works.
+- [x] Part 2: Maze traversal with blockades. I solved it using bruteforce (~5 minutes). Later solved it with binary search: ~0.5s. This way it only does 12 path traversels for my dataset.
 
 ## Day 17: ⭐⭐
 - [x] Part 1: implement op codes
