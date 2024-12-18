@@ -3,7 +3,7 @@ import re
 import sympy
 from sympy import Eq, solve, symbols
 from sympy.core.numbers import Integer
-
+import numpy as np
 
 def part1(dataset):
     A, B = symbols("A,B")
@@ -57,7 +57,51 @@ def parse_file(file):
     return res
 
 
+def part1_np(dataset):
+    tokens = 0
+    for equation in dataset:
+        a = np.array([[equation['A'][0], equation['B'][0]],[equation['A'][1], equation['B'][1]]])
+        b = np.array([equation['price'][0], equation['price'][1]])
+
+        res1, res2 = np.linalg.solve(a,b)
+        res1 = int(res1)
+        res2 = int(res2)
+        
+        check1 = (res1 * a[0][0] + res2 * a[0][1] == b[0])
+        check2 = (res1 * a[1][0] + res2 * a[1][1] == b[1])
+        if not (check1 and check2):
+            continue
+
+        if res1 <= 100 and res2 <= 100:
+            tokens += res1 * 3 + res2 * 1
+    print(tokens)
+
+def part2_np(dataset):
+    tokens = 0
+    for equation in dataset:
+        a = np.array([[equation['A'][0], equation['B'][0]],[equation['A'][1], equation['B'][1]]])
+        b = np.array([equation['price'][0], equation['price'][1]])
+
+        res1, res2 = np.linalg.solve(a,b)
+        res1 = int(res1)
+        res2 = int(res2)
+        
+        check1 = (res1 * a[0][0] + res2 * a[0][1] == b[0])
+        check2 = (res1 * a[1][0] + res2 * a[1][1] == b[1])
+        
+        if res1 <= 100 and res2 <= 100 and check1 and check2:
+            tokens += res1 * 3 + res2 * 1
+    print(tokens)
+
+
 if __name__ == "__main__":
-    dataset = parse_file("big.txt")
-    part1(dataset)
-    part2(dataset)
+    dataset = parse_file("small.txt")
+    part1_np(dataset)
+    # part2(dataset)
+    # import numpy as np
+    # # a = np.array([[94, 22], [34, 67]])
+    # # b = np.array([8400, 5400])
+    # a = np.array([[26, 67], [34, 67]])
+    # b = np.array([8400, 5400])
+
+    # print(np.linalg.solve(a,b))
