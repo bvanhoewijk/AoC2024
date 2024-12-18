@@ -9,6 +9,10 @@ Rules I impose on myself:
 
 Goal is to solve fun programming exercises to improve my coding skills.
 
+## Day 18: ⭐⭐
+- [x] Part 1: Maze traversal (BFS).
+- [x] Part 2: Maze traversal with blockades. I solved it via bruteforce (~5 minutes). I could think about it a bit more clever, but this works.
+
 ## Day 17: ⭐⭐
 - [x] Part 1: implement op codes
 - [x] Part 2: find some input. Reverse engineered the program into it's components. Did this with help from [HyperNeutrino](https://www.youtube.com/watch?v=y-UPxMAh2N8).
