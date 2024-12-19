@@ -10,7 +10,7 @@ Rules I impose on myself:
 Goal is to solve fun programming exercises to improve my coding skills.
 
 ## Day 19: ⭐⭐
-- [x] Part 1: Recursively find all possible patterns. I used the `@cache` from functools for caching recursive patterns.
+- [x] Part 1: Recursively find all possible patterns. I used the `@cache` from functools for caching the results.
 - [x] Part 2: Accidentally solved Part 2 as well.
 
 ## Day 18: ⭐⭐
