@@ -1,5 +1,6 @@
 from tqdm import tqdm
 
+
 def in_bounds(next_node, dataset_size):
     if next_node[0] < 0 or next_node[1] < 0:
         return False
@@ -17,7 +18,10 @@ dirs = [
     (0, -1),  # Left    <
 ]
 
-def bfs(start, end, occupied, grid_cols, grid_rows):
+
+def bfs(occupied, grid_size):
+    start = (0, 0)
+    end = (grid_size, grid_size)
     visited = set(start)
     queue = list()
     queue.append((start, 0))
@@ -26,78 +30,69 @@ def bfs(start, end, occupied, grid_cols, grid_rows):
         r, c = current
         for dr, dc in dirs:
             next_dir = (r + dr, c + dc)
-            if not in_bounds(next_dir, (grid_rows, grid_cols)) or next_dir in occupied or next_dir in visited:
+            if (
+                not in_bounds(next_dir, (grid_size + 1, grid_size + 1))
+                or next_dir in occupied
+                or next_dir in visited
+            ):
                 continue
             if next_dir == end:
                 return cost + 1
             else:
                 visited.add(next_dir)
-                queue.append((next_dir, cost+1))
+                queue.append((next_dir, cost + 1))
     return None
 
-def part1():
-    print("SMALL DATASET")
-    occupied = [
-        tuple(map(int, item.strip().split(",")))
-        for item in open("small.txt", "r").readlines()
-    ]
-    start = (0, 0)
-    end = (6, 6)
-    cost = bfs(start, end, occupied[:12], end[0]+1, end[1]+1)
-    print(cost)
-    
-    ############################################################
 
-    print("BIG DATASET")
+def part1():
     occupied = [
         tuple(map(int, item.strip().split(",")))
         for item in open("big.txt", "r").readlines()
     ]
-    start = (0, 0)
-    end = (70, 70)
     # 268
-    cost = bfs(start, end, occupied[:1024], end[0]+1, end[1]+1)
+    cost = bfs(occupied[:1024], 70)
     print(cost)
+
 
 def part2():
-    print("SMALL DATASET")
-    occupied = [
-        tuple(map(int, item.strip().split(",")))
-        for item in open("small.txt", "r").readlines()
-    ]
-    start = (0, 0)
-    end = (6, 6)
-    occupied_sel = occupied[:12].copy()
-    rest = occupied[12:].copy()
-
-    for item in rest: 
-        occupied_sel.append(item)   
-        cost = bfs(start, end, occupied_sel,  end[0]+1, end[1]+1)
-        if cost == None:
-            print(item)
-            break
-        else:
-            cost
-    
-    ############################################################
-
-    print("BIG DATASET")
     occupied = [
         tuple(map(int, item.strip().split(",")))
         for item in open("big.txt", "r").readlines()
     ]
-    start = (0, 0)
-    end = (70, 70)
-    
-    occupied_sel = occupied[:1024].copy()
-    rest = occupied[1024:].copy()
+    occupied_sel = occupied[:1024]
+    rest = occupied[1024:]
 
     for item in tqdm(rest):
-        occupied_sel.append(item)   
-        cost = bfs(start, end, occupied_sel,  end[0]+1, end[1]+1)
+        occupied_sel.append(item)
+        cost = bfs(occupied_sel, 70)
         if cost == None:
             print("Part 2", item)
             break
+
+
+def part2_binary_search():
+    occupied = [
+        tuple(map(int, item.strip().split(",")))
+        for item in open("big.txt", "r").readlines()
+    ]
+
+    lo = 0
+    hi = len(occupied) - 1
+
+    total_iter = 0
+    while lo < hi:
+        print(lo, hi)
+        mi = (lo + hi) // 2
+        cost = bfs(occupied[: mi + 1], 70)
+        total_iter += 1
+        if cost:
+            lo = mi + 1
+        else:
+            hi = mi
+
+    print(
+        f"Coordinates: {",".join(map(str, occupied[lo]))}. Paths tested: {total_iter}"
+    )
 
 
 def main():
@@ -105,9 +100,10 @@ def main():
     part1()
 
     # 64,11
-    part2()
-  
-  
+    part2_binary_search()
+    # This takes a while longer:
+    # part2()
+
 
 if __name__ == "__main__":
     main()
