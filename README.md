@@ -9,6 +9,10 @@ Rules I impose on myself:
 
 Goal is to solve fun programming exercises to improve my coding skills.
 
+## Day 20: ⭐
+- [x] Part 1: Quick BFS to get the path. Next, from each point try a cheat of 2 spots.
+- [ ] Part 2: in progress.
+
 ## Day 19: ⭐⭐
 - [x] Part 1: Recursively find all possible patterns. I used the `@cache` from functools for caching the results.
 - [x] Part 2: Accidentally solved Part 2 as well.
