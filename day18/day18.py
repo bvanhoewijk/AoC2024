@@ -81,7 +81,6 @@ def part2_binary_search():
 
     total_iter = 0
     while lo < hi:
-        print(lo, hi)
         mi = (lo + hi) // 2
         cost = bfs(occupied[: mi + 1], 70)
         total_iter += 1
@@ -102,7 +101,7 @@ def main():
     # 64,11
     part2_binary_search()
     # This takes a while longer:
-    # part2()
+    part2()
 
 
 if __name__ == "__main__":
