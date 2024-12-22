@@ -7,91 +7,59 @@ dirs = [
     (0, 1),  # Right   >
     (0, -1), # Left    <
 ]
-keypad_coords = {"7" : (0,0), "8" : (0,1), "9" : (0,2),
-                     "4" : (1,0), "5" : (1,1), "6" : (1,2),
-                     "1" : (2,0), "2" : (2,1), "3" : (2,2),
-                     "G" : (3,0), "0" : (3,1), "A" : (3,2)}
+door_keypad = [["7", "8", "9"], 
+               ["4", "5", "6"], 
+               ["1", "2", "3"], 
+               [None, "0", "A"]]
 
-keypad = ((7,8,9),
-            (4,5,6),
-            (1,2,3),
-            ("G",0,"A"))
+dir_keypad = [[None, "^", "A"],
+              ["<",  "v",  ">"]]
 
-dir_pad_coords = {"G" : (0,0), "^" : (0,1), "A" :  (0,2),
-                    "<" : (1,0), "v" : (1,1), ">" :  (1,2)}
+def solve(keys_to_press, keypad):
+    seqs = get_possibilities(keypad)
+    options = [seqs[(x,y)] for x, y in zip("A" + keys_to_press, keys_to_press)]
+    return ["".join(x) for x in list(product(*options))]
 
-dirpad = (("G", "^", "A"),
-            ("<" , "v", ">"))
-@cache
-def in_bounds(next_node, dataset_size):
-    rows = next_node[0]
-    cols = next_node[1]
-    width = dataset_size[0]
-    height = dataset_size[1]
-    return 0 <= cols < width and 0 <= rows < height
 
-@cache
-def dijkstra(start, end, key_pad):
-    dsize = (len(key_pad[0]), len(key_pad))
-    dirs_dict = dict(zip(dirs, list("^v><")))
-
-    visited = set(start)
-    path = []
-    queue = []
-
-    queue.append((start, [], 0))
-
-    all_paths = []
-    optimal = 1000
-    while queue:
-        current, path, cost = queue.pop(0)
-        r, c = current
-        visited.add(current)
-        for dir in dirs:
-            next_dir = (r + dir[0], c + dir[1])
-            symbol = dirs_dict[(dir[0], dir[1])]
-            if (next_dir) == end:
-                if optimal < cost + 1:
-                    break
-                optimal = cost + 1
-                all_paths.append(path + [(next_dir, symbol, cost+1)])
-            if not in_bounds(next_dir, dsize):
+def get_possibilities(keypad):
+    pos = {}
+    for r in range(len(keypad)):
+        for c in range(len(keypad[0])):
+            if keypad[r][c] is not None:
+                pos[keypad[r][c]] = (r,c)
+    seqs = {}
+    for x in pos:
+        for y in pos:
+            if x == y:
+                seqs[(x, y)] = ["A"]
                 continue
-            if next_dir in visited:
-                continue
+            # BFS
+            possibilities = []
+            queue = [(pos[x], "")]
+            optimal = 1000
+            while queue:
+                (r,c), moves = queue.pop(0)
+                for nr, nc, nm in [(r-1, c, "^"), (r+1, c, "v"), (r, c-1, "<"), (r, c+1, ">")]:
+                    if nr < 0 or nc <0 or nr >= len(keypad) or nc >= len(keypad[0]):
+                        continue
+                    if keypad[nr][nc] is None:
+                        continue
+                    if keypad[nr][nc] == y:
+                        if optimal < len(moves) + 1:
+                            break
+                        optimal = len(moves) + 1
+                        possibilities.append(moves+nm+"A")
+                    else:
+                        queue.append(((nr, nc), moves+nm))
+                else:
+                    continue
+                break
+            seqs[(x, y)] = possibilities
+    return seqs
 
-            key_pad_value = key_pad[next_dir[0]][next_dir[1]]
-            if key_pad_value == "G":
-                continue
-            else:       
-                new_path = path + [(next_dir, symbol, cost+1)]
-                queue.append((next_dir, new_path, cost+1))
-
-    shortest = [all_paths[0]]
-    for path in all_paths[1:]:
-        if path[-1][2] <= shortest[0][-1][2]:
-            shortest.append(path)
-    return shortest
-
-def solve(keys_to_press, keypad_coords, keypad):
-    start = keypad_coords["A"]
-    solution = []
-    for target in list(keys_to_press):
-        end = keypad_coords[target]
-        mult = []
-        for path in dijkstra(start, end, keypad):
-            start = path[-1][0]
-            mult.append(getpathstr(path))
-        solution.append(mult)
-
-    
-    return ["".join(x) for x in list(product(*solution))]
-
-def getpathstr(path):
-    pathstr = ""
-    for p in path:
-        pathstr += p[1]
-    return pathstr +"A"
+def compute_length(x, y, depth=2):
+    if depth == 1:
+        len(dir_seqs[(x, y)])
 
 def main():
     # <A ^A >^^A vvvA
@@ -99,19 +67,17 @@ def main():
     # <A ^A ^^>A vvvA
     
     total = 0
-    for line in ["029A"]:
-        robot1 = solve(line, keypad_coords, keypad)
-        print(robot1)
-        return
+    # for line in ["029A"]:
+    for line in open("big.txt").read().splitlines():
+        robot1 = solve(line, door_keypad)
         next = robot1
         for _ in range(2):
             possible_next = []
             for seq in next:
-                possible_next += solve(seq, dir_pad_coords, dirpad)
+                possible_next += solve(seq, dir_keypad)
             minlen = min(map(len, possible_next))
             next = [seq for seq in possible_next if len(seq) == minlen]
-
-        total += len(next[0]) * int(line[:-1]) 
+        total += len(next[0]) * int(line[:-1])
     print(total)
 
 if __name__ == "__main__":

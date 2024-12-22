@@ -96,37 +96,24 @@ def part2(file):
     for p in path:
         path_dict[p[0]] = p[2]
     
-    previous = set()
-    
-    counter = Counter()
-    unique_cheats = set()
-    for point in path_dict:
-        previous.add(point)
-        for d in dirs:
-            nr, nc = d
-            for i in range(21):
-                for j in range(21):
-                    alt_point = (point[0] + nr*i, point[1] + nc*j)
-                    if alt_point in path_dict and alt_point not in previous:
-                        saved = path_dict[point] - path_dict[alt_point] #+ max(nr*i, nc*i)
-                        if saved:
-                            unique_cheats.add((point, alt_point, saved))
-
-    for cheat in unique_cheats:
-        counter[abs(cheat[2])] += 1
-        
-    answer = 0
-    for c in sorted(counter.keys()):
-        if c >= 50:
-            answer += counter[c]
-            print(f"There are {counter[c]} cheats that save at least {c} ps")
-
-    print()
-    print(f"There are {answer} cheats that save at least 100 ps")
-    
+    count = 0
+    for r in range(len(dataset)):
+        for c in range(len(dataset[0])):
+            if dataset[r][c] == "#": continue
+            for radius in range(2, 21):
+                for dr in range(radius +1):
+                    dc = radius + dr
+                    for nr, nc in {(r + dr, c + dc), (r+dr, c-dr), (r-dr, c+dc), (r-dr, c-dc)}:
+                        if nr < 0 or nc < 0 or nr >= len(dataset) or nc >= len(dataset): continue
+                        if dataset[nr][nc] == "#": continue
+                        if (path_dict[(r, c)] - path_dict[(nr, nc)]) >= 50 + radius: count += 1
+    print(count)
 
 def main():
     # part1("big.txt")
+    # 110986 too low.
+    # 2522201 too high.
+    # 1236185 too high.
     part2("small.txt")
                 
 if __name__ == "__main__":
