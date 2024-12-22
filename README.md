@@ -9,6 +9,14 @@ Rules I impose on myself:
 
 Goal is to solve fun programming exercises to improve my coding skills.
 
+## Day 22: ⭐⭐
+- [x] Part 1: Brute force
+- [x] Part 2: Keep track of a tuple of four to get the best price.
+
+## Day 21: No stars
+- [ ] Part 1: Cannot figure this one out. My implementation is way too slow to finish.
+- [ ] Part 2: -
+
 ## Day 20: ⭐
 - [x] Part 1: Quick BFS to get the path. Next, from each point try a cheat of 2 spots.
 - [ ] Part 2: in progress.
