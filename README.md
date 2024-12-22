@@ -9,6 +9,10 @@ Rules I impose on myself:
 
 Goal is to solve fun programming exercises to improve my coding skills.
 
+## Day 23:
+- [x] Part 1: Brute force to find all connected computers in a clique of 3.
+- [x] Part 2: Used `networkx` to find maximum clique.
+
 ## Day 22: ⭐⭐
 - [x] Part 1: Brute force
 - [x] Part 2: Keep track of a tuple of four to get the best price.
