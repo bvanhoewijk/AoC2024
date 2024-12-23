@@ -14,6 +14,7 @@ Things learned so far:
 - Proper BFS/Dijkstra
 - `@cache`
 - That `networkx` exists
+- Sympy for systems of equations 
 
 ## Day 23: ⭐⭐
 - [x] Part 1: Brute force to find all connected computers in a clique of 3.
