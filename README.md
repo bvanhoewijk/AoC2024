@@ -9,12 +9,19 @@ Rules I impose on myself:
 
 Goal is to solve fun programming exercises to improve my coding skills.
 
+--- 
+
 Things learned so far:
 - Binary search
 - Proper BFS/Dijkstra
 - `@cache`
 - That `networkx` exists
 - Sympy for systems of equations 
+- The `all()`/`any()` Python functions
+
+## Day 24: ⭐
+- [x] Part 1: Used a queue to populate the answer
+- [ ] Part 2: No clue what is asked of me.
 
 ## Day 23: ⭐⭐
 - [x] Part 1: Brute force to find all connected computers in a clique of 3.
