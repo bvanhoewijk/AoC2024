@@ -4,13 +4,8 @@ def main():
     keys, locks = list(), list()
     for pattern in dataset:
         pattern = pattern.split("\n")
-        heights = [0, 0, 0, 0, 0]
-        if pattern[0] == "#####":
-            pattern = pattern[1:]
-            lock = True
-        else:
-            pattern = pattern[:-1]
-            lock = False
+        heights = [-1] * 5
+        lock = pattern[0] == "#####"
 
         for row in pattern:
             for i, pin in enumerate(row):
