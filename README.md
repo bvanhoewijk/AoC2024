@@ -18,6 +18,14 @@ Things learned so far:
 - That `networkx` exists
 - Sympy for systems of equations 
 - The `all()`/`any()` Python functions
+---
+
+Total stars: 42 / 50. Quite happy with the result. Might want to revisit a couple of exercises later.
+
+
+## Day 25: ⭐
+- [x] Part 1: Simple column addition comparison.
+- [ ] Part 2: N/A
 
 ## Day 24: ⭐
 - [x] Part 1: Used a queue to populate the answer
